@@ -132,27 +132,36 @@
 # dog.voice()
 # #the voice function of animal class is getting called not the current one, by overriding the property.
 
-class employee:
-    def callparameter(self,a,b):
-        self.a=a
-        self.b=b
-        print((self.a+self.b)/2)
-class staff(employee):
-    def callparameter(self,a,b,c):
-        super().callparameter(a,b)
-        self.a=a
-        self.b=b
-        self.c=c
-        print((self.a+self.b+self.c)/3)
-class office(staff):
-    def callparameter(self,a,b,c,d):
-        super().callparameter(a,b,c)
-        self.a=a
-        self.b=b
-        self.c=c
-        self.d=d
-        print((self.a+self.b+self.c+self.d)/4)
+# class employee:
+#     def callparameter(self,a,b):
+#         self.a=a
+#         self.b=b
+#         print((self.a+self.b)/2)
+# class staff(employee):
+#     def callparameter(self,a,b,c):
+#         super().callparameter(a,b)
+#         self.a=a
+#         self.b=b
+#         self.c=c
+#         print((self.a+self.b+self.c)/3)
+# class office(staff):
+#     def callparameter(self,a,b,c,d):
+#         super().callparameter(a,b,c)
+#         self.a=a
+#         self.b=b
+#         self.c=c
+#         self.d=d
+#         print((self.a+self.b+self.c+self.d)/4)
 
-obj1=office()
-obj1.callparameter(10,20,30,40)
+# obj1=office()
+# obj1.callparameter(10,20,30,40)
 
+#operator overloading:
+class car:
+    def __init__(self,wheels):
+        self.wheels=wheels
+    def add(self,otherwheels):
+        return self.wheels + otherwheels.wheels
+car1=car(4)
+car2=car(2)
+print(car1.add(car2))
