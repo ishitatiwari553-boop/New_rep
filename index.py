@@ -162,6 +162,9 @@ class car:
         self.wheels=wheels
     def add(self,otherwheels):
         return self.wheels + otherwheels.wheels
+    def sub(self,otherwheels2):
+        return self.wheels - otherwheels2.wheels
 car1=car(4)
 car2=car(2)
-print(car1.add(car2))
+car3=car(6)
+print(car1.add(car2)-car3.sub(car2))
