@@ -92,33 +92,67 @@
 
 #super keyword is used to call the method of parent class
 
-class University:
-    def __init__(self,attendance,marks):
-        self.attendance = attendance
-        self.marks = marks
-    def attendence(self):
-        return self.attendance
-    def marksget(self):
-        return self.marks
-class College(University):
-    def eligible(self):
-        if super().attendence()>=75:
-            return True
-        return False
-    def result(self):
-        if super().marksget()>=30:
-            return True
-        return False
-class School(College):
-    def total(self):
-        print(self.total)
+# class University:
+#     def __init__(self,attendance,marks):
+#         self.attendance = attendance
+#         self.marks = marks
+#     def attendence(self):
+#         return self.attendance
+#     def marksget(self):
+#         return self.marks
+# class College(University):
+#     def eligible(self):
+#         if super().attendence()>=75:
+#             return True
+#         return False
+#     def result(self):
+#         if super().marksget()>=30:
+#             return True
+#         return False
+# class School(College):
+#     def total(self):
+#         print(self.total)
     
 
-obj1 =School(50,500)
+# obj1 =School(50,500)
 
 
 
+# class Animal:
+#     def voice(self):
+#         print("the voice of an animal")
+# class Cat(Animal):
+#     def voice(self):
+#         print("meow")
+# class Dog(Animal):
+#     def voice(self):
+#         print("woof")
 
+# dog = Animal()
+# dog.voice()
+# #the voice function of animal class is getting called not the current one, by overriding the property.
 
+class employee:
+    def callparameter(self,a,b):
+        self.a=a
+        self.b=b
+        print((self.a+self.b)/2)
+class staff(employee):
+    def callparameter(self,a,b,c):
+        super().callparameter(a,b)
+        self.a=a
+        self.b=b
+        self.c=c
+        print((self.a+self.b+self.c)/3)
+class office(staff):
+    def callparameter(self,a,b,c,d):
+        super().callparameter(a,b,c)
+        self.a=a
+        self.b=b
+        self.c=c
+        self.d=d
+        print((self.a+self.b+self.c+self.d)/4)
 
+obj1=office()
+obj1.callparameter(10,20,30,40)
 
