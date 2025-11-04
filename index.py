@@ -168,18 +168,43 @@
 # car2=car(2)
 # car3=car(6)
 # print(car1.add(car2)-car3.sub(car2))
+# from abc import ABC,abstractmethod
+# class animal(ABC):
+#     @abstractmethod
+#     def sound(self):
+#         pass
+# class dog(animal):
+#     def sound(self):
+#         print("woof")
+# class Lion(animal):
+#     def sound(self):
+#         print("roar")
+# dog1=dog()
+# dog1.sound()
+# lion1=Lion()
+# lion1.sound()
 from abc import ABC,abstractmethod
 class animal(ABC):
     @abstractmethod
-    def sound(self):
+#abstract methods are methods with no definition and instructions
+    def voice():
         pass
-class dog(animal):
+    @abstractmethod
+    def legs():
+        pass
+class dog():
+#giving relevent information while inheriting the class
     def sound(self):
         print("woof")
 class Lion(animal):
     def sound(self):
         print("roar")
-dog1=dog()
-dog1.sound()
+    def legs(self):
+        print(4)
+ani1= animal()
+ani1.sound()
+ani1.legs()
 lion1=Lion()
 lion1.sound()
+lion1.legs()
+
