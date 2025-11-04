@@ -157,14 +157,29 @@
 # obj1.callparameter(10,20,30,40)
 
 #operator overloading:
-class car:
-    def __init__(self,wheels):
-        self.wheels=wheels
-    def add(self,otherwheels):
-        return self.wheels + otherwheels.wheels
-    def sub(self,otherwheels2):
-        return self.wheels - otherwheels2.wheels
-car1=car(4)
-car2=car(2)
-car3=car(6)
-print(car1.add(car2)-car3.sub(car2))
+# class car:
+#     def __init__(self,wheels):
+#         self.wheels=wheels
+#     def add(self,otherwheels):
+#         return self.wheels + otherwheels.wheels
+#     def sub(self,otherwheels2):
+#         return self.wheels - otherwheels2.wheels
+# car1=car(4)
+# car2=car(2)
+# car3=car(6)
+# print(car1.add(car2)-car3.sub(car2))
+from abc import ABC,abstractmethod
+class animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+class dog(animal):
+    def sound(self):
+        print("woof")
+class Lion(animal):
+    def sound(self):
+        print("roar")
+dog1=dog()
+dog1.sound()
+lion1=Lion()
+lion1.sound()
